@@ -208,6 +208,30 @@ footer h4{color:#fff;margin-bottom:15px}
  .footer-grid{grid-template-columns:1fr}
  .footer-grid>div:first-child{grid-column:auto}
 }
+ .socool-logo {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+}
+
+footer .brand {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.hero-image img {
+  display: block;
+  object-position: right top;
+}
+
+@media (max-width: 720px) {
+  header .socool-logo {
+    width: 155px;
+  }
+}
 </style>
 </head>
 
@@ -222,8 +246,7 @@ footer h4{color:#fff;margin-bottom:15px}
 <header>
  <div class="container nav">
   <a class="brand" href="#home" aria-label="SoCool homepage">
-   <div class="brand-symbol">SC</div>
-   <div class="brand-name">SoCool<small>AIRCON SPECIALISTS</small></div>
+    <img class="socool-logo" src="./SCL.png" alt="SoCool Aircon Specialists">
   </a>
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
   <nav class="nav-links" id="navLinks">
@@ -258,7 +281,11 @@ footer h4{color:#fff;margin-bottom:15px}
    </div>
   </div>
   <div class="hero-image">
-   <img src="https://images.unsplash.com/photo-1631545806609-8c4f7c1b8a3c?auto=format&fit=crop&w=1100&q=85" alt="Professional air-conditioning service environment">
+   <img
+    src="https://www.socool.sg/wp-content/uploads/2022/04/Aircon-Servicing.jpg"
+    alt="SoCool technician servicing a wall-mounted air conditioner"
+    width="861" height="1024"
+    fetchpriority="high">
    <div class="hero-label"><strong>Aircon Care</strong><small>For homes and businesses</small></div>
   </div>
  </div>
