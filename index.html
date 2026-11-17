@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SoCool Singapore provides residential and commercial aircon servicing, chemical wash, repair, installation and HVAC maintenance.">
+<title>SoCool | Aircon Servicing & HVAC Solutions Singapore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --red:#E00012;
+ --red-dark:#B90010;
+ --black:#151515;
+ --dark:#242424;
+ --white:#fff;
+ --grey:#F4F4F4;
+ --muted:#707070;
+ --line:#E6E6E6;
+ --soft-red:#FFF0F1;
+ --shadow:0 14px 38px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;color:#292929;line-height:1.65;background:#fff}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.2;color:var(--black)}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.container{width:min(1160px,90%);margin:auto}
+section{padding:88px 0}
+.eyebrow{font-size:.76rem;letter-spacing:1.8px;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:13px}
+.section-head{max-width:710px;margin-bottom:38px}
+.section-head h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:14px}
+.section-head p{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:6px;font-weight:800;transition:.2s;border:1px solid transparent}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-outline{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-outline:hover{background:#fff;color:var(--black)}
+.btn-black{background:var(--black);color:#fff}
+.btn-black:hover{background:var(--red)}
+.topbar{background:var(--black);color:#ddd;padding:9px 0;font-size:.8rem}
+.topbar .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.topbar a:hover{color:#fff}
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 3px 18px rgba(0,0,0,.06)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-symbol{width:46px;height:46px;background:var(--black);color:#fff;display:grid;place-items:center;border-radius:5px;font-family:Manrope;font-size:1.15rem;font-weight:900;letter-spacing:-2px;border-bottom:4px solid var(--red)}
+.brand-name{font-family:Manrope;font-size:1.55rem;font-weight:900;color:var(--red);letter-spacing:-1px;line-height:1}
+.brand-name small{display:block;color:var(--black);font-size:.57rem;letter-spacing:1.4px;margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:24px;font-size:.86rem;font-weight:700}
+.nav-links a:hover{color:var(--red)}
+.nav-actions{display:flex;gap:10px}
+.menu-toggle{display:none;border:0;background:var(--grey);padding:10px;border-radius:5px;font-size:1.2rem}
+.hero{background:linear-gradient(105deg,rgba(12,12,12,.97),rgba(25,25,25,.84)),url('https://images.unsplash.com/photo-1631545806609-8c4f7c1b8a3c?auto=format&fit=crop&w=1800&q=85') center/cover;color:#fff;padding:100px 0 92px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
+.hero .eyebrow{color:#ff777f}
+.hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem);color:#fff;letter-spacing:-2.5px;margin-bottom:22px}
+.hero h1 span{color:#ff424e}
+.hero-copy{font-size:1.05rem;color:#dedede;max-width:580px;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-points{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:#ddd;font-size:.84rem}
+.hero-points span:before{content:"✓";color:#ff5964;font-weight:900;margin-right:8px}
+.hero-image{position:relative}
+.hero-image img{width:100%;height:410px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,.15)}
+.hero-label{position:absolute;bottom:-20px;left:-20px;background:var(--red);color:#fff;padding:16px 20px;border-radius:5px;box-shadow:var(--shadow)}
+.hero-label strong{display:block;font-family:Manrope;font-size:1.3rem}
+.hero-label small{font-size:.75rem}
+.trust-strip{padding:23px 0;background:var(--red);color:#fff}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.trust-item{display:flex;align-items:center;gap:12px;font-size:.88rem;font-weight:700}
+.trust-icon{width:38px;height:38px;background:rgba(255,255,255,.16);border-radius:50%;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{border:1px solid var(--line);border-radius:9px;padding:26px;background:#fff;transition:.2s}
+.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#f2a2a8}
+.service-icon{width:55px;height:55px;background:var(--soft-red);color:var(--red);border-radius:8px;display:grid;place-items:center;margin-bottom:19px}
+.service-icon svg{width:29px;height:29px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.service-card h3{font-size:1.1rem;margin-bottom:9px}
+.service-card p{font-size:.89rem;color:var(--muted);min-height:76px}
+.service-card a{display:inline-block;margin-top:16px;color:var(--red);font-size:.88rem;font-weight:800}
+.commercial{background:var(--black);color:#fff}
+.commercial-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.commercial h2{color:#fff;font-size:clamp(2rem,4vw,2.7rem);margin-bottom:15px}
+.commercial p{color:#c8c8c8}
+.commercial-image img{width:100%;height:390px;object-fit:cover;border-radius:8px}
+.commercial-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
+.commercial-list span{padding:12px;background:#292929;border-left:3px solid var(--red);font-weight:700;font-size:.88rem}
+.pricing{background:var(--grey)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.price-head{padding:24px;background:#fff;border-bottom:1px solid var(--line)}
+.price-head h3{font-size:1.12rem;margin-bottom:6px}
+.price-head p{font-size:.83rem;color:var(--muted)}
+.price-body{padding:20px 23px}
+.price-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.87rem}
+.price-row:last-child{border:0}
+.price-row strong{color:var(--red);white-space:nowrap}
+.price-note{font-size:.8rem;color:var(--muted);margin-top:15px}
+.price-disclaimer{margin-top:24px;padding:18px;background:#fff;border-left:4px solid var(--red);font-size:.86rem;color:var(--muted)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.why-image img{width:100%;height:440px;object-fit:cover;border-radius:8px}
+.why-list{display:grid;gap:22px}
+.why-item{display:flex;gap:14px}
+.why-check{width:34px;height:34px;background:var(--soft-red);color:var(--red);display:grid;place-items:center;border-radius:50%;font-weight:900;flex-shrink:0}
+.why-item h3{font-size:1.02rem;margin-bottom:5px}
+.why-item p{font-size:.89rem;color:var(--muted)}
+.stats{background:var(--red);color:#fff;padding:45px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.stat strong{font-family:Manrope;font-size:2.2rem;display:block}
+.stat span{font-size:.85rem;color:#ffe5e6}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{border:1px solid var(--line);border-radius:8px;padding:24px}
+.stars{color:var(--red);letter-spacing:3px;margin-bottom:12px}
+.review p{font-size:.9rem;color:var(--muted);margin-bottom:18px}
+.review strong{font-size:.88rem}
+.review small{display:block;color:#999}
+.review-note{font-size:.78rem;color:var(--muted);margin-top:18px}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.process-card{padding:23px;border:1px solid var(--line);border-radius:8px}
+.process-no{width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:16px}
+.process-card h3{font-size:1rem;margin-bottom:8px}
+.process-card p{font-size:.86rem;color:var(--muted)}
+.faq-list{max-width:850px;display:grid;gap:12px}
+details{border:1px solid var(--line);border-radius:7px;padding:18px 20px}
+summary{cursor:pointer;font-weight:800;color:var(--black)}
+details p{padding-top:12px;font-size:.9rem;color:var(--muted)}
+.contact{background:var(--grey)}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}
+.contact-info{background:var(--black);color:#fff;border-radius:8px;padding:30px}
+.contact-info h2{color:#fff;font-size:1.8rem;margin-bottom:12px}
+.contact-info>p{color:#ccc;font-size:.9rem}
+.contact-line{padding:17px 0;border-bottom:1px solid #414141}
+.contact-line:last-child{border:0}
+.contact-line small{display:block;color:#ff6c76;text-transform:uppercase;font-weight:800;letter-spacing:1px;font-size:.7rem;margin-bottom:5px}
+.contact-line a{font-weight:700}
+.booking-form{background:#fff;padding:30px;border-radius:8px;box-shadow:var(--shadow)}
+.booking-form h3{font-size:1.5rem;margin-bottom:7px}
+.booking-form>p{font-size:.9rem;color:var(--muted);margin-bottom:22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:grid;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-size:.82rem;font-weight:700}
+input,select,textarea{width:100%;padding:13px;border:1px solid var(--line);border-radius:5px;font-size:.9rem}
+textarea{min-height:105px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid #ffb7bc;border-color:var(--red)}
+.form-note{font-size:.76rem;color:var(--muted);margin-top:12px}
+footer{background:#111;color:#c5c5c5;padding:48px 0 90px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}
+footer .brand-name{color:#ff404c}
+footer .brand-name small{color:#fff}
+footer p{font-size:.88rem;margin-top:15px;max-width:360px;color:#aaa}
+footer h4{color:#fff;margin-bottom:15px}
+.footer-links{display:grid;gap:10px;font-size:.87rem}
+.footer-links a:hover{color:#ff5964}
+.copyright{border-top:1px solid #333;margin-top:35px;padding-top:20px;font-size:.78rem;color:#888}
+.mobile-bar{display:none}
+@media(max-width:950px){
+ .nav-links{gap:13px;font-size:.78rem}
+ .hero-grid{gap:30px}
+ .services-grid,.price-grid{grid-template-columns:repeat(2,1fr)}
+ .trust-grid{grid-template-columns:repeat(2,1fr)}
+ .process-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+ section{padding:65px 0}
+ .topbar .container{justify-content:center;text-align:center}
+ .nav{height:72px}
+ .menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:20px 5%;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+ .nav-links.open{display:flex}
+ .nav-actions{display:none}
+ .hero{padding:68px 0}
+ .hero-grid,.commercial-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+ .hero h1{font-size:2.75rem}
+ .hero-image img{height:290px}
+ .hero-label{left:12px}
+ .services-grid,.price-grid{grid-template-columns:1fr 1fr;gap:12px}
+ .service-card{padding:17px}
+ .service-card h3{font-size:.96rem}
+ .service-card p{min-height:unset;font-size:.83rem}
+ .service-card a{font-size:.8rem}
+ .commercial-image img,.why-image img{height:290px}
+ .commercial-list{grid-template-columns:1fr 1fr}
+ .price-head{padding:16px}
+ .price-body{padding:12px}
+ .price-row{font-size:.77rem}
+ .stats-grid{grid-template-columns:1fr}
+ .stat strong{font-size:1.8rem}
+ .reviews-grid{grid-template-columns:1fr}
+ .gallery-grid{grid-template-columns:1fr}
+ .process-grid{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .footer-grid>div:first-child{grid-column:1/-1}
+ .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;padding:10px 12px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -5px 20px rgba(0,0,0,.14)}
+ .mobile-bar a{text-align:center;padding:13px;border-radius:5px;font-weight:800;font-size:.9rem}
+ .mobile-call{background:var(--black);color:#fff}
+ .mobile-wa{background:var(--red);color:#fff}
+ footer{padding-bottom:105px}
+}
+@media(max-width:420px){
+ .services-grid,.price-grid{grid-template-columns:1fr}
+ .trust-item{font-size:.78rem}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+ .footer-grid{grid-template-columns:1fr}
+ .footer-grid>div:first-child{grid-column:auto}
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">
+ <div class="container">
+  <span>Aircon Services Across Singapore</span>
+  <span><a href="tel:+6568544956">+65 6854 4956</a> &nbsp;|&nbsp; <a href="tel:+6566318348">+65 6631 8348</a></span>
+ </div>
+</div>
+
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home" aria-label="SoCool homepage">
+   <div class="brand-symbol">SC</div>
+   <div class="brand-name">SoCool<small>AIRCON SPECIALISTS</small></div>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="navLinks">
+   <a href="#services">Services</a>
+   <a href="#commercial">Commercial</a>
+   <a href="#pricing">Pricing</a>
+   <a href="#why-us">Why SoCool</a>
+   <a href="#reviews">Reviews</a>
+   <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+   <a class="btn btn-red" href="https://wa.me/6588554818?text=Hi%20SoCool%2C%20I%27d%20like%20to%20enquire%20about%20aircon%20services.">Book Now ↗</a>
+  </div>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">Singapore Aircon Service Specialists</div>
+   <h1>Stay Cool.<br><span>Stay Comfortable.</span><br>Choose SoCool.</h1>
+   <p class="hero-copy">Reliable air-conditioning care for homes and businesses. From routine servicing and chemical cleaning to repairs and commercial HVAC solutions.</p>
+   <div class="hero-actions">
+    <a class="btn btn-red" href="https://wa.me/6588554818?text=Hi%20SoCool%2C%20I%27d%20like%20to%20book%20an%20aircon%20service.">WhatsApp for an Appointment ↗</a>
+    <a class="btn btn-outline" href="#services">Explore Services</a>
+   </div>
+   <div class="hero-points">
+    <span>Residential & commercial</span>
+    <span>Servicing and repairs</span>
+    <span>Installation solutions</span>
+   </div>
+  </div>
+  <div class="hero-image">
+   <img src="https://images.unsplash.com/photo-1631545806609-8c4f7c1b8a3c?auto=format&fit=crop&w=1100&q=85" alt="Professional air-conditioning service environment">
+   <div class="hero-label"><strong>Aircon Care</strong><small>For homes and businesses</small></div>
+  </div>
+ </div>
+</section>
+
+<div class="trust-strip">
+ <div class="container trust-grid">
+  <div class="trust-item"><span class="trust-icon">✓</span>Residential aircon services</div>
+  <div class="trust-item"><span class="trust-icon">⚙</span>Commercial HVAC support</div>
+  <div class="trust-item"><span class="trust-icon">⌂</span>Installation and replacement</div>
+  <div class="trust-item"><span class="trust-icon">☎</span>Convenient appointment booking</div>
+ </div>
+</div>
+
+<section id="services">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Our services</div>
+   <h2>Complete aircon care, all in one place</h2>
+   <p>From regular maintenance to more intensive cleaning and repair work, find the service your air-conditioning system needs.</p>
+  </div>
+  <div class="services-grid">
+   <article class="service-card">
+    <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="11" rx="2"/><path d="M6 9h12M7 19h10M9 16v3m6-3v3"/></svg></div>
+    <h3>General Servicing</h3>
+    <p>Routine aircon cleaning and maintenance to support airflow, drainage and everyday cooling performance.</p>
+    <a href="#contact">Enquire about servicing →</a>
+   </article>
+   <article class="service-card">
+    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2c2 4 6 7 6 12a6 6 0 1 1-12 0c0-5 4-8 6-12Z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></div>
+    <h3>Chemical Wash</h3>
+    <p>Deeper cleaning for indoor units with heavier dirt accumulation and reduced cooling performance.</p>
+    <a href="#contact">Enquire about chemical wash →</a>
+   </article>
+   <article class="service-card">
+    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v8H4zM7 12v7m10-7v7M4 19h16"/><path d="m8 8 2 2 5-5"/></svg></div>
+    <h3>Steam Wash</h3>
+    <p>Steam-based cleaning for selected aircon components, subject to the equipment and service requirements.</p>
+    <a href="#contact">Enquire about steam wash →</a>
+   </article>
+   <article class="service-card">
+    <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h5"/></svg></div>
+    <h3>Chemical Overhaul</h3>
+    <p>A more intensive dismantling and cleaning service for indoor units that require deeper attention.</p>
+    <a href="#contact">Enquire about overhaul →</a>
+   </article>
+   <article class="service-card">
+    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 6a5 5 0 0 0-6 6L3 17l4 4 5-5a5 5 0 0 0 6-6l-3 3-4-4 3-3Z"/></svg></div>
+    <h3>Repair & Troubleshooting</h3>
+    <p>Investigation of common aircon issues, component faults, water leakage and cooling problems.</p>
+    <a href="#contact">Request repair assistance →</a>
+   </article>
+   <article class="service-card">
+    <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M16 4v16M3 10h18"/></svg></div>
+    <h3>Installation & Relocation</h3>
+    <p>Aircon installation, replacement and relocation solutions for residential and commercial spaces.</p>
+    <a href="#contact">Request an installation quote →</a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="commercial" id="commercial">
+ <div class="container commercial-grid">
+  <div>
+   <div class="eyebrow">Commercial HVAC solutions</div>
+   <h2>Reliable climate control for business environments</h2>
+   <p>SoCool also provides commercial air-conditioning services for larger and more complex cooling systems. Discuss your premises, system type and maintenance requirements with the team.</p>
+   <div class="commercial-list">
+    <span>VRV / VRF systems</span>
+    <span>Ducted systems</span>
+    <span>Chilled-water systems</span>
+    <span>Commercial maintenance</span>
+   </div>
+   <a class="btn btn-red" href="https://wa.me/6588554818?text=Hi%20SoCool%2C%20I%27d%20like%20to%20discuss%20commercial%20HVAC%20services.">Discuss a Commercial Project ↗</a>
+  </div>
+  <div class="commercial-image">
+   <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1100&q=85" alt="Commercial engineering and technical service environment">
+  </div>
+ </div>
+</section>
+
+<section class="pricing" id="pricing">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Service pricing</div>
+   <h2>Find the right service for your system</h2>
+   <p>Service costs depend on the aircon type, number of units, condition and work required. Request a quotation for your specific setup.</p>
+  </div>
+  <div class="price-grid">
+   <article class="price-card">
+    <div class="price-head"><h3>General Servicing</h3><p>Routine maintenance</p></div>
+    <div class="price-body">
+     <div class="price-row"><span>Residential split units</span><strong>Enquire</strong></div>
+     <div class="price-row"><span>Multiple units</span><strong>Enquire</strong></div>
+     <div class="price-row"><span>Maintenance plans</span><strong>Enquire</strong></div>
+     <p class="price-note">Confirm unit count, system type and visit frequency for a quotation.</p>
+    </div>
+   </article>
+   <article class="price-card">
+    <div class="price-head"><h3>Deep Cleaning</h3><p>Chemical wash and overhaul</p></div>
+    <div class="price-body">
+     <div class="price-row"><span>Chemical wash</span><strong>Enquire</strong></div>
+     <div class="price-row"><span>Steam wash</span><strong>Enquire</strong></div>
+     <div class="price-row"><span>Chemical overhaul</span><strong>Enquire</strong></div>
+     <p class="price-note">The recommended service depends on the condition and construction of the indoor unit.</p>
+    </div>
+   </article>
+   <article class="price-card">
+    <div class="price-head"><h3>Repairs & Installation</h3><p>Technical support and new systems</p></div>
+    <div class="price-body">
+     <div class="price-row"><span>Troubleshooting</span><strong>Enquire</strong></div>
+     <div class="price-row"><span>Parts replacement</span><strong>Enquire</strong></div>
+     <div class="price-row"><span>Installation</span><strong>Enquire</strong></div>
+     <p class="price-note">Provide photos, model details and the site location for a more accurate quotation.</p>
+    </div>
+   </article>
+  </div>
+  <div class="price-disclaimer">Prices and service inclusions should be confirmed directly with SoCool before booking. Ask for the complete quotation, applicable charges and maintenance contract terms.</div>
+  <div style="text-align:center;margin-top:27px">
+   <a class="btn btn-red" href="https://wa.me/6588554818?text=Hi%20SoCool%2C%20please%20send%20me%20your%20aircon%20service%20price%20list.">Request a Price List ↗</a>
+  </div>
+ </div>
+</section>
+
+<section id="why-us">
+ <div class="container why-grid">
+  <div class="why-image">
+   <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1100&q=85" alt="Professional technician working on an electrical and mechanical system">
+  </div>
+  <div>
+   <div class="section-head">
+    <div class="eyebrow">Why SoCool</div>
+    <h2>Professional aircon care with a clear process</h2>
+    <p>Good aircon service starts with understanding the system, identifying the issue and recommending the appropriate work.</p>
+   </div>
+   <div class="why-list">
+    <div class="why-item"><span class="why-check">✓</span><div><h3>Residential and commercial expertise</h3><p>Services for home aircon systems and larger commercial HVAC installations.</p></div></div>
+    <div class="why-item"><span class="why-check">✓</span><div><h3>Multiple cleaning options</h3><p>Routine maintenance and more intensive cleaning options for different system conditions.</p></div></div>
+    <div class="why-item"><span class="why-check">✓</span><div><h3>Repair and installation support</h3><p>One point of contact for servicing, troubleshooting, replacement and installation enquiries.</p></div></div>
+    <div class="why-item"><span class="why-check">✓</span><div><h3>Convenient appointment enquiries</h3><p>Reach the team by phone or WhatsApp to discuss your requirements.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div class="stats">
+ <div class="container stats-grid">
+  <div class="stat"><strong>4.9/5</strong><span>Website-displayed Google rating — verify before publication</span></div>
+  <div class="stat"><strong>Residential</strong><span>Aircon maintenance and cleaning</span></div>
+  <div class="stat"><strong>Commercial</strong><span>HVAC support and solutions</span></div>
+ </div>
+</div>
+
+<section id="reviews">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Customer experience</div>
+   <h2>Trust built through service</h2>
+   <p>Give customers a place to see genuine feedback and understand what working with SoCool is like.</p>
+  </div>
+  <div class="reviews-grid">
+   <article class="review"><div class="stars">★★★★★</div><p>Customer feedback about appointment handling, service quality and technician professionalism can be featured here.</p><strong>Verified customer review</strong><small>Replace with an approved Google review</small></article>
+   <article class="review"><div class="stars">★★★★★</div><p>Showcase a genuine customer experience with the specific service performed and the outcome.</p><strong>Verified customer review</strong><small>Replace with an approved Google review</small></article>
+   <article class="review"><div class="stars">★★★★★</div><p>Use authentic feedback to help prospective customers understand the quality of the service.</p><strong>Verified customer review</strong><small>Replace with an approved Google review</small></article>
+  </div>
+  <p class="review-note">These are layout placeholders, not customer quotations. Replace them with genuine approved reviews and link to the original review profile.</p>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">How it works</div>
+   <h2>Booking your aircon service is simple</h2>
+  </div>
+  <div class="process-grid">
+   <article class="process-card"><div class="process-no">01</div><h3>Tell us what you need</h3><p>Share the service, number of units and system type.</p></article>
+   <article class="process-card"><div class="process-no">02</div><h3>Confirm the quotation</h3><p>Discuss the scope, price and available appointment times.</p></article>
+   <article class="process-card"><div class="process-no">03</div><h3>Arrange the visit</h3><p>Confirm your booking and prepare access to the equipment.</p></article>
+   <article class="process-card"><div class="process-no">04</div><h3>Service and check</h3><p>Have the agreed work carried out and discuss any findings.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">FAQs</div>
+   <h2>Frequently asked questions</h2>
+  </div>
+  <div class="faq-list">
+   <details><summary>What aircon services does SoCool provide?</summary><p>SoCool lists general servicing, chemical wash, steam wash, chemical overhaul, repairs, troubleshooting, gas top-up, installation and relocation services.</p></details>
+   <details><summary>Do you provide commercial aircon services?</summary><p>SoCool lists commercial systems including VRV, VRF, ducted and chilled-water systems. Contact the team to confirm the required scope and availability.</p></details>
+   <details><summary>How do I know whether I need a chemical wash?</summary><p>The appropriate cleaning method depends on the unit's condition, contamination and symptoms. Ask for an assessment before selecting a more intensive service.</p></details>
+   <details><summary>How can I book an appointment?</summary><p>Call the team or send a WhatsApp enquiry with your service requirement, number of units and location.</p></details>
+   <details><summary>Does SoCool provide 24-hour support?</summary><p>The website advertises 24-hour support. Confirm the current availability and response arrangements directly with the company.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Contact SoCool</div>
+   <h2>Let's get your aircon sorted</h2>
+   <p>Send your requirements and the team can help you discuss the next steps.</p>
+  </div>
+  <div class="contact-grid">
+   <div class="contact-info">
+    <h2>Get in touch</h2>
+    <p>For servicing, maintenance, repairs and installation enquiries.</p>
+    <div class="contact-line"><small>Hotline</small><a href="tel:+6568544956">+65 6854 4956</a></div>
+    <div class="contact-line"><small>Additional hotline</small><a href="tel:+6566318348">+65 6631 8348</a></div>
+    <div class="contact-line"><small>Appointment WhatsApp</small><a href="https://wa.me/6588554818">+65 8855 4818</a></div>
+    <div class="contact-line"><small>Address listed online</small>22 Sin Ming Lane, #06-76,<br>Midview City, Singapore 573969</div>
+    <div class="contact-line"><small>Published hotline hours</small>8 AM – 10 PM<br>Confirm current support hours.</div>
+   </div>
+   <form class="booking-form" id="bookingForm">
+    <h3>Request a service enquiry</h3>
+    <p>Complete the details and continue through WhatsApp.</p>
+    <div class="form-grid">
+     <div class="field"><label for="name">Your name</label><input id="name" required placeholder="Name"></div>
+     <div class="field"><label for="phone">Contact number</label><input id="phone" required placeholder="Phone number"></div>
+     <div class="field"><label for="service">Service required</label><select id="service" required><option value="">Select service</option><option>General servicing</option><option>Chemical wash</option><option>Steam wash</option><option>Chemical overhaul</option><option>Repair / troubleshooting</option><option>Gas top-up</option><option>Installation / relocation</option><option>Commercial HVAC</option><option>Other enquiry</option></select></div>
+     <div class="field"><label for="units">Number of units</label><select id="units"><option value="">Select quantity</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option><option>Commercial system</option></select></div>
+     <div class="field full"><label for="location">Postal code / location</label><input id="location" placeholder="Singapore postal code or area"></div>
+     <div class="field full"><label for="details">Additional details</label><textarea id="details" placeholder="Describe the issue, aircon brand or preferred appointment time"></textarea></div>
+     <div class="field full"><button class="btn btn-red" type="submit">Continue to WhatsApp ↗</button></div>
+    </div>
+    <p class="form-note">This form prepares a WhatsApp message. It does not store or submit information to a website database.</p>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <a class="brand" href="#home"><div class="brand-symbol">SC</div><div class="brand-name">SoCool<small>AIRCON SPECIALISTS</small></div></a>
+    <p>Residential and commercial air-conditioning servicing, cleaning, repair and installation solutions in Singapore.</p>
+   </div>
+   <div><h4>Explore</h4><div class="footer-links"><a href="#services">Services</a><a href="#commercial">Commercial HVAC</a><a href="#pricing">Pricing</a><a href="#reviews">Customer reviews</a></div></div>
+   <div><h4>Contact</h4><div class="footer-links"><a href="tel:+6568544956">+65 6854 4956</a><a href="tel:+6566318348">+65 6631 8348</a><a href="https://wa.me/6588554818">WhatsApp appointments</a><span>22 Sin Ming Lane, Singapore</span></div></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> SoCool. All rights reserved.</div>
+ </div>
+</footer>
+
+<div class="mobile-bar">
+ <a class="mobile-call" href="tel:+6568544956">☎ Call</a>
+ <a class="mobile-wa" href="https://wa.me/6588554818?text=Hi%20SoCool%2C%20I%27d%20like%20to%20enquire%20about%20aircon%20services.">WhatsApp ↗</a>
+</div>
+
+<script>
+const menuToggle=document.getElementById('menuToggle');
+const navLinks=document.getElementById('navLinks');
+
+menuToggle.addEventListener('click',()=>{
+ const open=navLinks.classList.toggle('open');
+ menuToggle.setAttribute('aria-expanded',String(open));
+});
+
+navLinks.querySelectorAll('a').forEach(link=>{
+ link.addEventListener('click',()=>{
+  navLinks.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded','false');
+ });
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const service=document.getElementById('service').value;
+ const units=document.getElementById('units').value||'Not specified';
+ const location=document.getElementById('location').value.trim()||'Not specified';
+ const details=document.getElementById('details').value.trim()||'No additional details';
+
+ const message=`Hi SoCool, I would like to make an enquiry.
+
+Name: ${name}
+Contact: ${phone}
+Service: ${service}
+Number of units: ${units}
+Location: ${location}
+Details: ${details}
+
+Please let me know the quotation and available appointment times.`;
+
+ window.open('https://wa.me/6588554818?text='+encodeURIComponent(message),'_blank','noopener');
+});
+</script>
+</body>
+</html>
